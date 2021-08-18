@@ -12,13 +12,13 @@ available, etc!
 [hubot]: http://hubot.github.com
 [generator-hubot]: https://github.com/github/generator-hubot
 
-### Running NerdBot Locally
+### Running C-3PO Locally
 
 You can test your hubot by running the following, however some plugins will not
 behave as expected unless the [environment variables](#configuration) they rely
 upon have been set.
 
-You can start NerdBot locally by running:
+You can start C-3PO locally by running:
 
     % bin/hubot
 	
@@ -31,7 +31,7 @@ You'll see some start up output and a prompt:
     [Sat Feb 28 2015 12:38:27 GMT+0000 (GMT)] INFO Using default redis on localhost:6379
     NerdBot>
 
-Then you can interact with NerdBot by typing `NerdBot help`.
+Then you can interact with C-3PO by typing `NerdBot help`.
 
     NerdBot> NerdBot help
     NerdBot animate me <query> - The same thing as `image me`, except adds [snip]
