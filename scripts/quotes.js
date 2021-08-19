@@ -26,11 +26,11 @@ quotes = [
 // make script visible to hubot
 module.exports = function(robot) {
     // respond to a request for "quips"
-    robot.respond(/quips/i, function(msg) {
+    robot.respond(/quotes/i, function(msg) {
       msg.send(msg.random(quotes))
     })
 
-    robot.hear(/(droid|robot)/i, function(msg) {
+    robot.hear(/(droid)/i, function(msg) {
       msg.send(msg.random(quotes))
     })
 }
