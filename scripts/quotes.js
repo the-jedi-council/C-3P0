@@ -21,6 +21,8 @@ quotes = [
     "Sometimes, I just don't understand human behaviour.",
     `Don't you call me a mindless philosopher you overweight glob of grease!`,
     "For a mechanic, you seem to do an incessant amount of thinking.",
+    "Put me down you overgrown walking carpet!",
+    "We\re doomed!",
 ]
 
 // make script visible to hubot
