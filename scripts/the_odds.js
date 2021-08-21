@@ -15,7 +15,7 @@
 //
 
 
-// define array of quotes
+// define quote
 odds = "The possibility of successfully navigating an asteroid field is approximately 3,720 to 1!"
 
 // make script visible to hubot
