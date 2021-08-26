@@ -23,7 +23,7 @@ odds = [
 // make script visible to hubot
 module.exports = function(robot) {
     // respond to a request for "tell me the odds"
-    robot.respond(/odds/i, function(msg) {
+    robot.respond(/tell me the odds/i, function(msg) {
       msg.send(msg.random(odds))
     })
 
