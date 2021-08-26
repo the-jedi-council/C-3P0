@@ -15,19 +15,14 @@
 //
 
 
-// define array of quotes
-odds = [
-    "The possibility of successfully navigating an asteroid field is approximately 3,720 to 1!",
-]
+// define quote
+odds = "The possibility of successfully navigating an asteroid field is approximately 3,720 to 1!"
 
 // make script visible to hubot
 module.exports = function(robot) {
-    // respond to a request for "tell me the odds"
-    robot.respond(/tell me the odds/i, function(msg) {
-      msg.send(msg.random(odds))
-    })
+  // respond to a request for "tell me the odds"
+  robot.respond(/tell me the odds/i, function(msg) {
+    msg.send(odds)
+  })
 
-    robot.hear(/(droid)/i, function(msg) {
-      msg.send(msg.random(odds))
-    })
 }
