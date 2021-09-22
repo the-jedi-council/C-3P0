@@ -26,19 +26,25 @@ module.exports = function(robot) {
         var dialog = switchBoard.startDialog(msg);
 
         // C-3P0's initial response. User response (room) triggers one of several conversation pathways.
-        msg.reply("I'm an intelligently designed and vastly complex arrangement of code in your device. I couldn't possibly clean your house even if I wanted to do such menial labor. But even if I could, that doesn't seem to be a job I'm well suited for. Better to let the Wookie do it. I am curious though... what room seems to be out of sorts?");
+        msg.reply("I'm an intelligently designed and vastly complex arrangement of code in your device. I couldn't possibly clean your house even if I wanted to do such menial labor. And suppose I could, that doesn't seem to be a job I'm well suited for. Better to let the Wookie do it. I am curious though... what room seems to be out of sorts?");
         
         // User response: hall
         dialog.addChoice(/hall|hallway|foyer/i, function(msg2) {
             msg2.reply("Ahhh, the rooms that aren't rooms filled with intentional space that's also wasted. So inefficient.");
             dialog.addChoice(/inefficient\?/i, function(msg3) {
                 msg3.reply("Yes. Inefficient. Why have space to move from one space to another space? Just connect the spaces! Organic beings make such careless and uncalculated decisions. How does your species manage to survive so long?");
+                dialog.addChoice(/intelligence|intellect|smarts|brains|we\'re smarter|we're better|skills|we're skilled|we're superior beings|we're superior|superior intellect|God's design|God's sovereignty|the Lord's sovereignty|inevitability|it was inevitable/i, function(msg4) {
+                    msg4.reply("Oh, I very much doubt that.");
+                });
             });
         });
 
         // User response: kitchen
-        dialog.addChoice(/kitchen/i, function(msg3) {
-            msg3.reply("On it boss!");
+        dialog.addChoice(/kitchen/i, function(msg5) {
+            msg5.reply("Where you humans prepare your consumables? A terribly repetitive and unnecessary habit indeed. Wouldn\'t you like to be like me and not have to eat?");
+            dialog.addChoice(/pantry/i, function(msg6) {
+                msg6.reply("On it boss!");
+            });
         });
         
         // User response: pantry
@@ -47,7 +53,7 @@ module.exports = function(robot) {
         });
         
         // User response: closet
-        dialog.addChoice(/closet|hideaway/i, function(msg5) {
+        dialog.addChoice(/closet|hideaway|under the bed/i, function(msg5) {
             msg5.reply("How is that possibly possible? Isn't that space just for storage?");
         });
         
@@ -64,6 +70,14 @@ module.exports = function(robot) {
                 dialog.addChoice(/youre welcome|you\'re welcome|of course|no problem/i, function(msg9) {
                     msg9.reply("Such manners! Much more pleasant than the late Creator before his untimely demise.");
                 });
+            });
+        });
+
+        // User response: your house
+        dialog.addChoice(/your house|your space|your server/i, function(msg6) {
+            msg6.reply("I'm a sophisticated digital consciousness. I don't have my own space. Well, I mean my plethora of data is formatted to a specific space on your storage device, and storage on Heroku's server. But I digress.");
+            dialog.addChoice(/''/i, function(msg6) {
+                msg6.reply("I no longer wish to discuss this matter with you.");
             });
         });
     });
