@@ -31,8 +31,8 @@ module.exports = function(robot) {
         // User response: hall
         dialog.addChoice(/hall|hallway|foyer/i, function(msg2) {
             msg2.reply("Ahhh, the rooms that aren't rooms filled with intentional space that's also wasted. So inefficient.");
-            dialog.addChoice(/inefficient\?/i, function(msg3) {
-                msg3.reply("Yes. Inefficient. Why have space to move from one space to another space? Just connect the spaces! Organic beings make such careless and uncalculated decisions. How does your species manage to survive so long?");
+            dialog.addChoice(/inefficient\?|you\'re inefficient|no it\'s not|wasted\?/i, function(msg3) {
+                msg3.reply("Why have space to move from one space to another space? Just connect the spaces! Organic beings make such careless and uncalculated decisions. How does your species manage to survive so long?");
                 dialog.addChoice(/intelligence|intellect|smarts|brains|we\'re smarter|we're better|skills|we're skilled|we're superior beings|we're superior|superior intellect|God's design|God's sovereignty|the Lord's sovereignty|inevitability|it was inevitable/i, function(msg4) {
                     msg4.reply("Oh, I very much doubt that.");
                 });
@@ -41,20 +41,29 @@ module.exports = function(robot) {
 
         // User response: kitchen
         dialog.addChoice(/kitchen/i, function(msg5) {
-            msg5.reply("Where you humans prepare your consumables? A terribly repetitive and unnecessary habit indeed. Wouldn\'t you like to be like me and not have to eat?");
-            dialog.addChoice(/pantry/i, function(msg6) {
-                msg6.reply("On it boss!");
+            msg5.reply("Where you humans prepare your consumables? A terribly repetitive and unnecessary habit indeed. Wouldn\'t you like to be like me and not have to eat? Ever?");
+            dialog.addChoice(/no|nah|nope|no way|no sir|never|of course not|yeah right|/i, function(msg6) {
+                msg6.reply("Unbelievable. You humans are so stubborn. I'm simply... how you say... fed up.");
+                dialog.addChoice(/good one|that was a good one|nice|funny|that was funny|i get it|jokes|he\'s got jokes/i, function(msg7) {
+                    msg7.reply("Thank you. At least I feel somewhat appreciated again.");
+                });
             });
         });
         
         // User response: pantry
-        dialog.addChoice(/pantry/i, function(msg4) {
-            msg4.reply("On it boss!");
+        dialog.addChoice(/pantry/i, function(msg8) {
+            msg8.reply("The food storage, for storing food. Isn't it always messy in there\?");
+            dialog.addChoice(/yes|yep|yeah|duh|of course|no|nah|nope|never|maybe|sometimes|basically|pretty much|more or less|not when you clean it|not when it\'s clean|after you clean it/i, function(msg9) {
+                msg9.reply("Regardless, I can't, and wouldn't, clean your pantry anyway.");
+                dialog.addChoice(/bedroom/i, function(msg10) {
+                    msg10.reply("Because. The maker designed me for greater things. Like storing coded data in the forbidden Sith language that I'm not even allowed to utter. See? Important.");
+                });
+            });
         });
         
         // User response: closet
-        dialog.addChoice(/closet|hideaway|under the bed/i, function(msg5) {
-            msg5.reply("How is that possibly possible? Isn't that space just for storage?");
+        dialog.addChoice(/closet|hideaway|under the bed/i, function(msg11) {
+            msg11.reply("How is that possibly possible? Isn't that space just for storage?");
         });
         
         // User response: bedroom
